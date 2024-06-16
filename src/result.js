@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("result").innerText = "不同意";
         }
         else {
-            document.getElementById("result").innerHTML = "<a href=\""+window.location.origin+"\">也许你该点这再来一遍</a>";
+            window.location.href = window.location.origin;
         }
     }
     localStorage.setItem("result", null);
