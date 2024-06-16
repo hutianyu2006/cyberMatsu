@@ -4,7 +4,7 @@ document.getElementById("start").addEventListener("click", () => {
     document.getElementById("start").style.display = "none";
     let world = planck.World(
         {
-            "gravity": new planck.Vec2(0, -9.8015)
+            "gravity": new planck.Vec2(0, -10)
         }
     );
     let platform = world.createBody(
@@ -17,7 +17,7 @@ document.getElementById("start").addEventListener("click", () => {
     platform.createFixture(
         {
             shape: new planck.Edge(new planck.Vec2(-100, 0), new planck.Vec2(+100, 0)),
-            restitution: 0.6
+            restitution: 0.2
         }
     );
     let barrier1 = world.createBody(
@@ -30,7 +30,7 @@ document.getElementById("start").addEventListener("click", () => {
     barrier1.createFixture(
         {
             shape: new planck.Edge(new planck.Vec2(0, 0), new planck.Vec2(0, 100)),
-            restitution: 0.6
+            restitution: 0.2
         }
     );
     let barrier2 = world.createBody(
@@ -43,43 +43,41 @@ document.getElementById("start").addEventListener("click", () => {
     barrier2.createFixture(
         {
             shape: new planck.Edge(new planck.Vec2(0, 0), new planck.Vec2(0, 100)),
-            restitution: 0.6
+            restitution: 0.2
         }
     );
     let coin = world.createBody(
         {
             type: "dynamic",
-            position: new planck.Vec2(1.0, 10.0),
-            angle: 0.0,
+            position: new planck.Vec2(1, 28.0+Math.random()*4),
+            angle: Math.random() * Math.PI,
         }
     );
     coin.createFixture(
         {
             shape: new planck.Box(2, 0.05),
-            density: 8.2,
-            friction: 0.4,
-            restitution: 0.6
+            density: 8,
+            friction: 0.6,
+            restitution: 0.2
         }
     );
     let coin2 = world.createBody(
         {
             type: "dynamic",
-            position: new planck.Vec2(-1.0, 20.0),
-            angle: 0.0,
+            position: new planck.Vec2(-1, 28.0 + Math.random() * 4),
+            angle: Math.random() * Math.PI,
         }
     );
     coin2.createFixture(
         {
             shape: new planck.Box(2, 0.05),
-            density: 8.2,
-            friction: 0.4,
-            restitution: 0.6
+            density: 8,
+            friction: 0.6,
+            restitution: 0.2
         }
     );
-    coin.setLinearVelocity(new planck.Vec2(Math.random() * 2 + 5, 0));
-    coin.setAngularVelocity((5 + Math.random()) * Math.PI);
-    coin2.setLinearVelocity(new planck.Vec2(Math.random() * 2 - 5, 0));
-    coin2.setAngularVelocity((-5 - Math.random()) * Math.PI);
+    coin.setAngularVelocity((Math.random()*5) * Math.PI);
+    coin2.setAngularVelocity((-Math.random()*5) * Math.PI);
     let waitForResult = new Promise((resolve) => {
         let interval = setInterval(() => {
             if (coin.getLinearVelocity().y != 0 || coin.getLinearVelocity().x != 0 || coin.getAngularVelocity() != 0 || coin2.getLinearVelocity().y != 0 || coin2.getLinearVelocity().y != 0 || coin2.getAngularVelocity() != 0) {
