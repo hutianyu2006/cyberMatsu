@@ -41,5 +41,6 @@ npm run dev
 
 ### 特别致谢
 
-* **物理引擎:** [planck.js](https://github.com/shakiba/planck.js)
-* **构建工具:** [Vite](https://vitejs.dev/)
+* **物理引擎:** * [box2d.js](https://github.com/kripken/box2d.js)
+* **2D渲染:** * [two.js](https://two.js.org/)
+* **构建工具:** * [Vite](https://vitejs.dev/)

@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-### Special Thanks
-
-* **Physics Engine:** [planck.js](https://github.com/shakiba/planck.js)
+### Credits
+* **Physics Engine:** [box2d.js](https://github.com/kripken/box2d.js)
+* **2D Rendering* ** [two.js](https://two.js.org/)
 * **Build Tool:** [Vite](https://vitejs.dev/)
