@@ -12,7 +12,11 @@ export default defineConfig({
             output: {
                 chunkFileNames: "assets/[name]-[hash].js",
                 entryFileNames: "assets/[name]-[hash].js",
-                assetFileNames: "assets/[name]-[hash][extname]"
+                assetFileNames: "assets/[name]-[hash][extname]",
+                manualChunks: {
+                    "box2d": ["box2d.js"],
+                    "two": ["two.js"]
+                }
             }
         }
     }
