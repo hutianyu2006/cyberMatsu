@@ -3,7 +3,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hutianyu2006/cyberMatsu"
-  }
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
